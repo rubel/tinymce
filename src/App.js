@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Editor } from "@tinymce/tinymce-react";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  handleEditorChange = (e) => {
+    console.log("Content was updated:", e.target.getContent());
+  };
+
+  render() {
+    return (
+      <div style={{ maxWidth: "1024px" }}>
+        <Editor
+          initialValue="<p>Easy House</p>"
+          key={"gpzgmxikedjso2sz048tl7uoyt0o987m9soewpdxrnd7d4xl"}
+          init={{
+            plugins: "link image code",
+            menubar: false,
+            toolbar:
+              "undo redo | styles | bold italic underline | link image | fontsize forecolor paste | alignleft aligncenter alignright",
+            toolbar_mode: "floating",
+          }}
+          onChange={this.handleEditorChange}
+        />
+      </div>
+    );
+  }
 }
 
 export default App;
