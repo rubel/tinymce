@@ -11,12 +11,14 @@ class App extends React.Component {
       <div style={{ maxWidth: "1024px" }}>
         <Editor
           initialValue="<p>Easy House</p>"
-          key={"gpzgmxikedjso2sz048tl7uoyt0o987m9soewpdxrnd7d4xl"}
+          apiKey={"gpzgmxikedjso2sz048tl7uoyt0o987m9soewpdxrnd7d4xl"}
           init={{
             plugins: "link image code",
+            branding: false,
             menubar: false,
             toolbar:
-              "undo redo | styles | bold italic underline | link image | fontsize forecolor paste | alignleft aligncenter alignright",
+              "undo redo | styles | bold italic underline | link image | fontsize forecolor paste | alignleft aligncenter alignright | removeformat | help",
+
             toolbar_mode: "floating",
           }}
           onChange={this.handleEditorChange}
